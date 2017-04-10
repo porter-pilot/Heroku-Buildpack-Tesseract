@@ -18,9 +18,8 @@ curl $TESSERACT_OCR_REMOTE -o - | tar -xz -C $INSTALL_DIR -f -
 
 echo 'Getting tesseract-ocr training data'
 echo 'English training data'
-tar -xz -C $INSTALL_DIR_TRAINING_DATA -f ./tesseract-ocr-3.02.eng.tar.gz 
-#curl https://tesseract-ocr.googlecode.com/files/tesseract-ocr-$TESSERACT_OCR_DATA_VERSION.eng.tar.gz \
- # -o - | tar -xz -C $INSTALL_DIR_TRAINING_DATA -f -
+curl https://raw.githubusercontent.com/porter-pilot/Heroku-Buildpack-Tesseract/master/tesseract-ocr-3.02.eng.tar.gz \
+  -o - | tar -xz -C $INSTALL_DIR_TRAINING_DATA -f -
 
 
 #if [ $TESSERACT_OCR_LANGUAGES ]
